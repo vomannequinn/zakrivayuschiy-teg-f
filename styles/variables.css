@@ -1,1 +1,19 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    /* Шрифты */
+    --font-main: 'Inter-Variable';
+    --font-accent: 'PressStart2P';
+
+    --font-weight-title: 700;
+    --font-weight-main-text: 400;
+
+    /* Переменные темы */
+    --background-color: #fff;
+    --accent-color: rgba(0, 0, 0, 1);
+    --background-image: repeating-linear-gradient(to right, #d3d3d3, transparent 2px),
+    repeating-linear-gradient(to bottom, #e7e7e7, #1a1a1a 2px);
+    --disabled-button-color: rgba(0, 0, 0, 0.6);
+    --text-shadow-color: rgba(255, 255, 255, 1);
+    --button-text-color: var(--background-color);
+    --red-color: red;
+}

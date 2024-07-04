@@ -12,3 +12,117 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+@keyframes arrow {
+    from {
+        left: -13px;
+    }
+    to {
+        left: -17px;
+    }
+}
+
+@keyframes heart-scale {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 1.5;
+    }
+}
+
+@keyframes sparks-opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--accent-color);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.button:hover::before {
+    transform: translateX(0);
+}
+
+.like-icon .heart {
+    transition: fill 0.3s linear;
+    transform-origin: center center;
+    width: 27px;
+    height: 24px;
+  }
+
+.like-icon .core {
+    fill: var(--background-color);
+    transition: fill 0.03s 0.03s linear;
+  }
+
+.like-icon:hover .core {
+    fill: var(--accent-color);
+    transition: fill 0.3s linear;
+}
+
+.like-icon .main-body {
+    fill: var(--background-color);
+    transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+    fill: var(--accent-color);
+    transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .core {
+    fill: var(--red-color);
+    transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+    fill: var(--red-color);
+    transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core {
+    fill: var(--red-color);
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+    fill: var(--red-color);
+    transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+    fill: var(--red-color);
+    transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon .contour {
+    fill: var(--accent-color);
+    transition: fill linear 0.1s;
+}
+
+.like-icon.is-liked .heart {
+    animation: heart-scale 0.3s ease-in 0.1s 2 alternate;
+}
+
+.like-icon .sparks {
+    opacity: 0;
+    fill: var(--red-color);
+}
+
+.like-icon.is-liked .sparks {
+    animation: sparks-opacity 0.3s ease-in 0.3s 2 alternate;
+  }

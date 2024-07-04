@@ -1,3 +1,6 @@
+@import url(./variables.css);
+@import url(./animations.css);
+
 /* Здесь вы напишете основную часть стилей страницы.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
@@ -15,6 +18,303 @@
 */
 
 .page {
+  margin: 100px clamp(0rem, -8.143rem + 34.742vi, 23.125rem);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-main), sans-serif;
+  font-variation-settings: 'wght' 400;
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+
+.header {
+  margin-bottom: 100px;
+  text-align: center;
+  background-color: var(--background-color);
+  font-family: var(--font-accent);
+  border: 1px solid var(--accent-color);
+  text-transform: uppercase;
+}
+
+.header__title {
+  font-size: clamp(3.063rem, 2.71rem + 1.502vi, 4.063rem);
+  margin: clamp(7.5rem, 7.148rem + 1.502vi, 8.5rem) 0 20px;
+}
+
+.header__subtitle {
+  margin-bottom: 25px;
+  font-size: clamp(0.875rem, 0.677rem + 0.845vi, 1.438rem);
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.theme-menu__button {
+  text-transform: uppercase;
+  border: none;
+  background: none;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  position: relative;
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  left: -13px;
+  width: 14px;;
+  animation: arrow 0.5s ease-in-out infinite alternate;
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 clamp(0rem, -0.044rem + 0.188vi, 0.125rem);
+  gap: 52px;
+}
+
+.card {
+  border: 1px solid var(--accent-color);
+  background-color: var(--background-color);
+}
+
+.card-title {
+  font-variation-settings: 'wght' var(--font-weight-title);
+  padding: 3px 24px 3px 10px;
+}
+
+.card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1 / 1;
+}
+
+.card__image-container {
+  overflow: hidden;
+  position: relative;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.image-label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 14px;
+  z-index: 1;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow: 
+    1px 0 var(--text-shadow-color),
+    -1px 0 var(--text-shadow-color),
+    0 1px var(--text-shadow-color),
+    0 -1px var(--text-shadow-color);
+}
+
+@supports (((text-stroke: 1px var(--text-shadow-color)) 
+    or (-webkit-text-stroke: 1px var(--text-shadow-color)))
+    and (mix-blend-mode: hard-light)) {
+  .image-label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--text-shadow-color);
+    text-stroke: 1px var(--text-shadow-color);
+    mix-blend-mode: hard-light;
+  }
+}
+
+.card__article {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 25px;
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--font-weight-main-text);
+  line-height: 1.21;
+}
+
+.button-place {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 12px;
+  margin: 0 25px 25px 0;
+
+}
+
+.card__icon-button {
+  border: 2px solid transparent;
+  background-color: transparent;
+  transition: border 0.3s ease;
+  width: 41px;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+}
+
+.like-icon {
+  position: relative;
+  z-index: 10;
+}
+
+
+.button {
+  border: 1px solid var(--accent-color);
+  background-color: var(--background-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.card__like-button {
+  padding: 10px 0;
+  padding: 12.5px;
+  width: 130px;
+}
+
+.button__text {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 0.9;
+  position: relative;
+  z-index: 10;
+  color: var(--background-color);
+  mix-blend-mode: difference;
+}
+
+.save {
+  margin: 52px clamp(2.156rem, -1.046rem + 13.662vi, 11.25rem) 105px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 21px 15px 19px;
+}
+
+.save__button {
+  background-color: #fff;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-inline: auto;
+
+}
+
+.save__floppy {
+  color: var(--accent-color);
+  width: 21px;
+  height: 21px;
+}
+
+@media (width <= 375px) {
+  .page {
+    margin: 100px 0;
+  }
+
+  .save {
+    flex-direction: column;
+  }
+
+  .image-label {
+    right: 13px;
+  }
+}
+
+.button:focus,
+.button:focus-visible,
+.card__icon-button:focus,
+.like-icon:focus,
+.like-icon:focus-visible,
+.card__like-button:focus,
+.card__icon-button:focus-visible,
+.theme-menu__button:focus-visible,
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.button:focus {
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  opacity: 0.6;
+  transition: width 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+}
+
+.dialog {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  padding: 30px;
+  color: var(--accent-color);
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  width: clamp(21.313rem, 21.048rem + 1.127vi, 22.063rem);
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog:is([open]) .dialog-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-block-end: 30px;
+}
+
+.dialog .floppy-image {
+  width: 39px;
+  height: 39px;
+}
+
+.dialog-container-button {
+  padding: 12.5px clamp(7.156rem, 6.76rem + 1.69vi, 8.281rem);
+}
+
+.dialog-container__button-text {
+  text-transform: uppercase;
 }

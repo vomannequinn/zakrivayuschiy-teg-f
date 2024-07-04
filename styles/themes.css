@@ -4,3 +4,59 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-light {
+    --font-main: 'Inter-Variable';
+    --font-accent: 'PressStart2P';
+
+    --font-weight-title: 700;
+    --font-weight-main-text: 400;
+
+    /* Переменные темы */
+    --background-color: #fff;
+    --accent-color: rgba(0, 0, 0, 1);
+    --background-image: repeating-linear-gradient(to right, #d3d3d3, transparent 2px),
+    repeating-linear-gradient(to bottom, #e7e7e7, #1a1a1a 2px);
+    --disabled-button-color: rgba(0, 0, 0, 0.6);
+    --text-shadow-color: rgba(255, 255, 255, 1);
+    --button-text-color: var(--background-color);
+    --red-color: red;
+}
+
+
+:root.theme-dark {
+    --font-main: 'Inter-Variable';
+    --font-accent: 'PressStart2P';
+
+    --font-weight-title: 785;
+    --font-weight-main-text: 465;
+
+    /* Переменные темы */
+    --background-color: #000;
+    --accent-color: rgba(0, 204, 20, 1);
+    --background-image: repeating-linear-gradient(to right, #000, transparent 2px),
+    repeating-linear-gradient(to bottom, #007f0c, #004306 2px);
+    --text-shadow-color: rgba(0, 0, 0, 1);
+    --button-text-color: var(--accent-color);
+    --red-color: red;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --font-main: 'Inter-Variable';
+        --font-accent: 'PressStart2P';
+    
+        --font-weight-title: 785;
+        --font-weight-main-text: 465;
+    
+        /* Переменные темы */
+        --background-color: #000;
+        --accent-color: rgba(0, 204, 20, 1);
+        --background-image: repeating-linear-gradient(to right, #000, transparent 2px),
+        repeating-linear-gradient(to bottom, #007f0c, #004306 2px);
+        --disabled-button-color: rgba(0, 204, 20, 0.6);
+        --text-shadow-color: rgba(0, 0, 0, 1);
+        --button-text-color: var(--accent-color);
+        --red-color: red;
+    }
+}
