@@ -78,7 +78,7 @@
   content: '▶';
   position: absolute;
   left: -13px;
-  width: 14px;;
+  width: 14px;
   animation: arrow 0.5s ease-in-out infinite alternate;
 }
 
@@ -186,8 +186,7 @@
 }
 
 .card__like-button {
-  padding: 10px 0;
-  padding: 12.5px;
+  padding: 10px 12.5px;
   width: 130px;
 }
 
@@ -198,7 +197,7 @@
   line-height: 0.9;
   position: relative;
   z-index: 10;
-  color: var(--background-color);
+  color: var(--button-text-color);
   mix-blend-mode: difference;
 }
 
@@ -221,9 +220,10 @@
 }
 
 .save__floppy {
-  color: var(--accent-color);
+  color: var(--button-text-color);
   width: 21px;
   height: 21px;
+  mix-blend-mode: difference;
 }
 
 @media (width <= 375px) {
@@ -307,8 +307,7 @@
 }
 
 .dialog .floppy-image {
-  width: 39px;
-  height: 39px;
+  width: 81px;
 }
 
 .dialog-container-button {
@@ -317,4 +316,36 @@
 
 .dialog-container__button-text {
   text-transform: uppercase;
+}
+
+.sri {
+  filter: brightness(1.3);
+}
+
+.beach {
+  filter: contrast(1.2) brightness(1.1);
+}
+
+.saint-p {
+  filter: blur(2px);
+}
+
+.cat {
+  filter: hue-rotate(50deg);
+}
+
+.city-img {
+  filter: invert(1);
+}
+
+.sunset {
+  filter: sepia(2);
+}
+
+.moscow {
+  filter: opacity(80%);
+}
+
+.developer {
+  filter: grayscale(10%);
 }
