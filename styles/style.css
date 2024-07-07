@@ -118,7 +118,7 @@
 }
 
 .card__image-container {
-  height: clamp(23.188rem, 15.947rem + 30.892vi, 43.75rem);
+  height: clamp(23.488rem, 15.947rem + 30.892vi, 43.75rem);
   overflow: hidden;
   position: relative;
   border-top: 2px solid var(--accent-color);
@@ -188,7 +188,7 @@
 
 
 .button {
-  border: 1px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
   background-color: var(--background-color);
   position: relative;
   overflow: hidden;
@@ -219,6 +219,7 @@
   gap: 8px;
   padding: 15px 21px 15px 19px;
   border: 2px solid var(--accent-color);
+  text-wrap: nowrap;
 }
 
 .save__button {
@@ -227,29 +228,15 @@
   gap: 8px;
   align-items: center;
   margin-inline: auto;
-
 }
 
 .save__floppy {
   color: var(--button-text-color);
-  width: 21px;
-  height: 21px;
+  width: clamp(1.75rem, 1.904rem + -0.657vi, 1.313rem);
+  height: clamp(1.75rem, 1.904rem + -0.657vi, 1.313rem);
   mix-blend-mode: difference;
 }
 
-@media (width <= 375px) {
-  .page {
-    margin: 100px 0;
-  }
-
-  .save {
-    flex-direction: column;
-  }
-
-  .image-label {
-    right: 13px;
-  }
-}
 
 .button:focus,
 .button:focus-visible,
@@ -360,4 +347,30 @@
 
 .developer {
   filter: grayscale(10%);
+}
+
+@media (width <= 375px) {
+  .page {
+    margin: 100px 0;
+  }
+
+  .card__article {
+    padding: 27px 25px 25px;
+    gap: 30px;
+  }
+
+  .header__theme-menu {
+    padding-inline-start: 20px;
+  }
+  
+  .button-place {
+    margin: 0 23px 18px 0;
+  }
+  .save {
+    flex-direction: column;
+  }
+
+  .image-label {
+    right: 13px;
+  }
 }
